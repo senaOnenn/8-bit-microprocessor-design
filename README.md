@@ -1,2 +1,24 @@
-8-Bit Microprocessor DesignBu proje, Sivas Cumhuriyet Üniversitesi bünyesindeki Bilgisayar Mühendisliği eğitimi kapsamında geliştirilmiş olup, Von Neumann mimarisine dayalı 8-bitlik bir mikroişlemcinin lojik kapı seviyesinden tasarlanmasını ve Quartus II ortamında simüle edilmesini içermektedir.Proje HakkındaBu çalışmanın temel amacı, bilgisayar mimarisinin yapı taşlarını (ALU, Kontrol Birimi, Register'lar) uygulamalı olarak tasarlamak ve Fetch-Decode-Execute döngüsünü donanımsal düzeyde doğrulamaktır. Tasarım, modüler bir hiyerarşiyle, en temel 1-bitlik işlem hücresinden başlayarak genişletilmiştir.Temel ÖzelliklerModüler Mimari: 1-bitlik temel hücrelerden türetilen 3-bit (SC), 5-bit (AR/PC) ve 9-bitlik yazmaç grupları.Kontrol Birimi (CU): 3x8 Decoder (74138) ve Sequence Counter (SC) kullanılarak üretilen zamanlama sinyalleri ($T_0-T_7$).Aritmetik Lojik Birim (ALU): Toplama, çıkarma, mantıksal AND, XOR ve tersleme işlemlerini gerçekleştiren 9-bitlik hesaplama ünitesi.Komut Seti: LDA, ADD ve STA gibi temel mikroişlem komutlarının Fetch-Decode-Execute döngüsü ile doğrulanması.Tasarım HiyerarşisiBit Hücresi: Temel depolama ve lojik işlem birimi.Yazmaçlar: 3, 5 ve 9-bitlik ölçeklenebilir register yapıları.Zamanlayıcı: $T_0-T_7$ zamanlama sinyallerini üreten SC birimi.ALU: Aritmetik ve mantıksal hesaplama motoru.MİB (Merkezi İşlem Birimi): Tüm parçaların BUS yapısı üzerinden birleştiği ana mimari.Simülasyon Sonuçlarıİşlemcinin aritmetik doğruluğu, LDA ve ADD komut setleri kullanılarak gerçekleştirilen fonksiyonel simülasyonlarla doğrulanmıştır<img width="796" height="730" alt="Ekran görüntüsü 2026-05-20 211118" src="https://github.com/user-attachments/assets/5617e448-409a-47b2-8de4-ad13079faee9" />
-<img width="796" height="730" alt="Ekran görüntüsü 2026-05-20 211118" src="https://github.com/user-attachments/assets/d08e6ee3-f3f8-4358-8dfd-0ab4ba108d44" />
+8-Bit CPU Design (Quartus II)
+Bu proje, temel dijital mantık kapılarını kullanarak tasarladığım 8-bitlik bir mikroişlemci tasarımını içeriyor. En alttan (1-bitlik hücre) en üste (kontrol birimi) kadar her parçayı kendim modelledim.
+
+🛠️ Kullandığım Teknolojiler
+Quartus II (Tasarım ve Simülasyon)
+
+Verilog/BDF (Blok Şemalar)
+
+🚀 Neler Yaptım?
+ALU: Toplama, çıkarma, mantıksal işlemler.
+
+Kontrol Birimi: Fetch-Decode-Execute döngüsü (T0-T7 zamanlama).
+
+Modüler Yapı: Yazmaçlar (Register files) ve adresleme birimi (PC/AR).
+
+Simülasyon: Tasarımın doğruluğunu kanıtlayan test çıktıları.
+
+📊 Simülasyon Sonucu
+Aşağıdaki görselde, işlemcinin 25 + 15 = 40 toplama işlemini başarıyla gerçekleştirdiği anı görebilirsin:
+<img width="800" height="608" alt="Ekran görüntüsü 2026-05-20 210509" src="https://github.com/user-attachments/assets/b3d1c089-659f-48b3-b841-9aa10ab74316" />
+
+
+
+Proje Sivas Cumhuriyet Üniversitesi Bilgisayar Mühendisliği dersi için geliştirilmiştir.
